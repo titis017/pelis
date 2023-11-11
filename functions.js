@@ -3,17 +3,18 @@ import { getPelis } from "./comunicationManager.js";
 
 createApp({
 
-    data(){
-        datos : []
+    data()  {
+        return{
+            datos: [],
+        }
     },
-    methods(){
+    methods: {
 
     },
     created(){
-        console.log("aaaaa")
         getPelis().then(data =>  {
             this.datos=data
-         }
+        }
      );
     }
-})
+}).mount("#app");
