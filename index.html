@@ -20,11 +20,11 @@
 
         <div class="carouselAuto">
             <div class="carouselTrack">
-                <button v-for="item in datos" class="card" data-bs-target="#exampleModal" data-bs-toggle="modal">
+                <button v-for="item in datos" class="card" data-bs-target="#exampleModal" data-bs-toggle="modal" v-on:click="getInfoPeli(item.imdbID)">
                     <img :src="item.Poster" alt="" class="card-img-top"> 
                     <h6 class="titleCard">{{item.Title}}</h6>
                 </button>
-                <button v-for="item in datos" class="card" data-bs-target="#exampleModal" data-bs-toggle="modal">
+                <button v-for="item in datos" class="card" data-bs-target="#exampleModal" data-bs-toggle="modal" v-on:click="getInfoPeli(item.imdbID)">
                     <img :src="item.Poster" alt="" class="card-img-top"> 
                     <h6 class="titleCard">{{item.Title}}</h6>
                 </button>
@@ -40,7 +40,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  ...
+                    {{detPeli.Plot}}
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
