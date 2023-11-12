@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+body{
+    background-color: #121212;
+}
 .titlePage{
     text-align: center;
     font-family: 'Bebas Neue', sans-serif;
     margin-top: 10%;
+    color: #2358a8;
+    
+}
+.titlePage h1{
+    font-size: 125px;
 }
 .buscador{
     text-align: center;
@@ -24,9 +32,10 @@
 
 .card{
     width: 20rem;
-
+    margin-right: 10px;
 }
 .carouselAuto{
+    margin-top: 25px;
     width: 75vw;
     height: auto;
     margin-left: auto;
