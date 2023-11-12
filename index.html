@@ -15,12 +15,20 @@
             <h1>InfoPelis</h1>
         </div>
         <div class="buscador">
-            <input type="text">
+            <input type="text" placeholder="Introduce la pelicula a buscar"> 
         </div>
 
-
-        <div v-for="item in datos">
-            {{item.Title}}
+        <div class="carouselAuto">
+            <div class="carouselTrack">
+                <div v-for="item in datos" class="card">
+                    <img :src="item.Poster" alt="" class="card-img-top"> 
+                    <h6 class="titleCard">{{item.Title}}</h6>
+                </div>
+                <div v-for="item in datos" class="card">
+                    <img :src="item.Poster" alt="" class="card-img-top"> 
+                    <h6 class="titleCard">{{item.Title}}</h6>
+                </div>
+            </div>
         </div>
     </div>
     

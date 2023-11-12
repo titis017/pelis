@@ -1,10 +1,56 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 .titlePage{
     text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    margin-top: 10%;
 }
 .buscador{
     text-align: center;
+    
 }
 .buscador input{
     width: 35%;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.titleCard{
+    text-align: center;
+}
+.card-img-top{
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.card{
+    width: 20rem;
+
+}
+.carouselAuto{
+    width: 75vw;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.carouselAuto .carouselTrack{
+    display: flex;
+    animation: scroll 40s linear infinite;
+    -webkit-animation: scroll 40s linear infinite;
+    width: calc(20rem * 20);
+}
+
+.slider .slide{
+    width: 20rem;
+}
+@keyframes scroll{
+    0%{
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100%{
+        -webkit-transform: translateX(calc(-20rem * 10));
+        transform: translateX(calc(-20rem * 10));
+    }
 }
