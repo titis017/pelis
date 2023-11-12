@@ -15,20 +15,52 @@
             <h1>FilmFusionFacts</h1>
         </div>
         <div class="buscador">
-            <input type="text" placeholder="Introduce la pelicula a buscar"> 
+            <input v-model="buscar" type="text" placeholder="Introduce la pelicula a buscar" v-on:keyup.enter="buscarPeli(buscar)"> 
         </div>
 
-        <div class="carouselAuto">
+        <div class="carouselAuto" v-if="actual == ''">
             <div class="carouselTrack">
-                <div v-for="item in datos" class="card">
+                <button v-for="item in datos" class="card" data-bs-target="#exampleModal" data-bs-toggle="modal" v-on:click="getInfoPeli(item.imdbID)">
                     <img :src="item.Poster" alt="" class="card-img-top"> 
                     <h6 class="titleCard">{{item.Title}}</h6>
-                </div>
-                <div v-for="item in datos" class="card">
+                </button>
+                <button v-for="item in datos" class="card" data-bs-target="#exampleModal" data-bs-toggle="modal" v-on:click="getInfoPeli(item.imdbID)">
                     <img :src="item.Poster" alt="" class="card-img-top"> 
                     <h6 class="titleCard">{{item.Title}}</h6>
-                </div>
+                </button>
             </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {{detPeli.Plot}}
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div v-if="actual == 'buscar'" v-for="item in buscarPelis" class="containerBusc">
+            <div class="card">
+                <img :src="item.Poster" alt="" class="card-img-left">
+                <div class="contenido">
+                    <h5>{{item.Title}}</h5>
+                    <h6>{{item.Year}}</h6>
+                </div>
+                
+                
+            </div>
+            
+        </div>
+        <div class="alert alert-danger" role="alert" v-if="actual == 'error'">
+            No se ha encontrado ninguna pelicula con ese titulo. Se mas especifico o mira si hay un error en tu busqueda!!!
         </div>
     </div>
     

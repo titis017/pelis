@@ -24,13 +24,13 @@ body{
 .titleCard{
     text-align: center;
 }
-.card-img-top{
+.carouselTrack .card .card-img-top{
     width: 100%;
     height: 200px;
     object-fit: contain;
 }
 
-.card{
+.carouselTrack .card{
     width: 20rem;
     margin-right: 10px;
 }
@@ -53,6 +53,44 @@ body{
 .slider .slide{
     width: 20rem;
 }
+
+.containerBusc{
+    margin-top: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.containerBusc .card{
+    width: 40%;
+    height: 175px;
+    margin-bottom: 10px;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: left;
+}
+
+.card-img-left{
+    width: 20%;
+    height: 300px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.contenido{
+    position: absolute;
+    margin-left: 25%;
+}
+
+.alert-danger{
+    margin-left: auto;
+    margin-right: auto;
+    width:40%;
+}
+
 @keyframes scroll{
     0%{
         -webkit-transform: translateX(0);
