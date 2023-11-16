@@ -15,7 +15,7 @@
             <h1>FilmFusionFacts</h1>
         </div>
         <div class="buscador">
-            <input v-model="buscar" type="text" placeholder="Introduce la pelicula a buscar" v-on:keyup.enter="buscarPeli(buscar)"> 
+            <input v-model="buscar" type="text" placeholder="Introduce la pelicula a buscar" @input="buscarPeli(buscar)"> 
         </div>
 
         <div class="carouselAuto" v-if="actual == ''">
